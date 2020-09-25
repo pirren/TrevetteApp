@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
+$title: 'Racing Sans One', sans-serif;
+$sans: 'Lato', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: $sans;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #FFD647, darken(#FFD647, 20%));
+    background-size: 400% 400%;
+    position: relative;
+    -webkit-animation: change 15s ease-in-out infinite;
+            animation: change 15s ease-in-out infinite;
+}
+
+@keyframes change {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+
+img {
+    transform: translateY(-50%);
+}
