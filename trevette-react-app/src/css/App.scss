@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+$sans: 'Lato', sans-serif;
+$title: 'Oswald', sans-serif;
+
+body {
+    font-family: $sans;
+}
+
+// navbar
+.trevette-logo { 
+    height: 50px; 
+    width: 197px;
+    background-image: url('/gfx/logo.svg');
+    background-size: cover;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    &-container {
+        background: #FFD647;
+    }
+}
+
+#navbarMenu {
+    @media screen and (max-width: 992px) {
+        padding: 1rem 1.25rem;
+    }
+}
