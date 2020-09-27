@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import CurrentObject from './components/CurrentObject';
 
 import "jquery/dist/jquery.min.js";
 
@@ -13,8 +14,21 @@ import uuid from "uuid";
 
 function App() {
   return (
-    <div className="navbar-container">
-      <Navbar />
+    <div>
+      <div className="navbar-container">
+        <Navbar />
+      </div>
+
+      <div className="container main-container">
+        <div class="wrap-main">
+          <div class="object-wrap">
+            <CurrentObject />
+          </div>
+        </div>
+        <div class="wrap-side">
+          Hej från höger
+        </div>
+      </div>
     </div>
   );
 }

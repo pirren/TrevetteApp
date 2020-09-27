@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap');
 
 $sans: 'Lato', sans-serif;
 $title: 'Oswald', sans-serif;
 
+$yellow: #FFD647;
+
 body {
     font-family: $sans;
+    background-color: #F8F6F5;
 }
+
+* { transition: .125s ease-in; }
+
+h1,h2 { font-family: $title; }
+.bg-yellow { background-color: $yellow; }
 
 // navbar
 .trevette-logo { 
@@ -28,5 +36,78 @@ body {
 #navbarMenu {
     @media screen and (max-width: 992px) {
         padding: 1rem 1.25rem;
+    }
+}
+
+// page body
+.main-container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 992px) { flex-direction: column; }
+}
+
+.wrap-main {
+    flex-grow: 7;
+    order: 0;
+}
+
+.wrap-side {
+    flex-grow: 3;
+    margin-left: 1rem;
+    border-radius: 5px;
+}
+
+// object container 
+.object-wrap {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(#555451, 0.25);
+    overflow: hidden;
+}
+
+.object {
+    border-radius: 5px;
+    &__photo {
+        height: 300px;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &__info {
+        padding: 2rem 1rem;
+
+        &--basic {
+            .flavor-title { margin-top: .5rem; }
+            button { font-family: $title; }
+            .price { 
+                color: #555451; 
+                text-align: center; 
+                margin-top: .5rem; 
+            }
+        }
+
+        &--technical {
+            .title { margin-top: .5rem; }
+        }
+    }
+
+    &__gallery {
+        display: flex;
+        flex: row wrap;
+        margin: 1rem 0rem;
+        @media screen and(min-width: 768px) { padding: 1rem 4rem; }
+        @media screen and(min-width: 992px) { padding: 1rem 8rem; }
+        @media screen and(min-width: 1200px) { padding: 1rem 12rem; }
+        .gallery-img {
+            flex: 1;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
     }
 }

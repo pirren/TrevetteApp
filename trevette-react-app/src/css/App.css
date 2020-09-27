@@ -1,7 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap");
 body {
   font-family: "Lato", sans-serif;
+  background-color: #F8F6F5;
+}
+
+* {
+  -webkit-transition: .125s ease-in;
+  transition: .125s ease-in;
+}
+
+h1, h2 {
+  font-family: "Oswald", sans-serif;
+}
+
+.bg-yellow {
+  background-color: #FFD647;
 }
 
 .trevette-logo {
@@ -24,5 +38,122 @@ body {
   #navbarMenu {
     padding: 1rem 1.25rem;
   }
+}
+
+.main-container {
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media screen and (max-width: 992px) {
+  .main-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.wrap-main {
+  -webkit-box-flex: 7;
+      -ms-flex-positive: 7;
+          flex-grow: 7;
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+}
+
+.wrap-side {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  margin-left: 1rem;
+  border-radius: 5px;
+}
+
+.object-wrap {
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 5px rgba(85, 84, 81, 0.25);
+          box-shadow: 0px 2px 5px rgba(85, 84, 81, 0.25);
+  overflow: hidden;
+}
+
+.object {
+  border-radius: 5px;
+}
+
+.object__photo {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.object__info {
+  padding: 2rem 1rem;
+}
+
+.object__info--basic .flavor-title {
+  margin-top: .5rem;
+}
+
+.object__info--basic button {
+  font-family: "Oswald", sans-serif;
+}
+
+.object__info--basic .price {
+  color: #555451;
+  text-align: center;
+  margin-top: .5rem;
+}
+
+.object__info--technical .title {
+  margin-top: .5rem;
+}
+
+.object__gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row wrap;
+          flex: row wrap;
+  margin: 1rem 0rem;
+}
+
+@media screen and (min-width: 768px) {
+  .object__gallery {
+    padding: 1rem 4rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .object__gallery {
+    padding: 1rem 8rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .object__gallery {
+    padding: 1rem 12rem;
+  }
+}
+
+.object__gallery .gallery-img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 /*# sourceMappingURL=App.css.map */
