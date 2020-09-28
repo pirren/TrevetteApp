@@ -6,7 +6,6 @@ import "jquery/dist/jquery.min.js";
 
 import "bootstrap/js/dist/collapse.js";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/font-awesome.min.css";
 
 import "./css/App.css";
 

@@ -98,7 +98,7 @@ h1, h2 {
 }
 
 .object__info {
-  padding: 2rem 1rem;
+  padding: 2rem;
 }
 
 .object__info--basic .flavor-title {
@@ -107,6 +107,20 @@ h1, h2 {
 
 .object__info--basic button {
   font-family: "Oswald", sans-serif;
+  -webkit-box-shadow: 0 0.375em 0 #FFD647;
+          box-shadow: 0 0.375em 0 #FFD647;
+  border: 0.125rem solid #FFD647;
+}
+
+.object__info--basic button:hover {
+  -webkit-box-shadow: 0 0.375em 0 #faa230;
+          box-shadow: 0 0.375em 0 #faa230;
+  border: 0.125rem solid #faa230;
+}
+
+.object__info--basic .badge {
+  font-size: 90%;
+  margin-right: .5rem;
 }
 
 .object__info--basic .price {
@@ -117,6 +131,47 @@ h1, h2 {
 
 .object__info--technical .title {
   margin-top: .5rem;
+}
+
+.object__info--technical .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row wrap;
+          flex: row wrap;
+}
+
+.object__info--technical .box:not(:last-of-type) {
+  margin-bottom: .5rem;
+}
+
+.object__info--technical .box .module {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: .5rem;
+  border-bottom: 1px solid #a3a3a1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: .15rem;
+}
+
+.object__info--technical .box .module .left .fa, .object__info--technical .box .module .left .fas {
+  margin-right: .5rem;
+}
+
+.object__info--technical .box .module .right span {
+  color: #232123;
+}
+
+.object__info--technical .box .module:last-of-type {
+  margin-right: 0;
+  margin-left: .5rem;
 }
 
 .object__gallery {

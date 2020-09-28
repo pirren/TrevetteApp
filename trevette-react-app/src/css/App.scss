@@ -5,6 +5,7 @@ $sans: 'Lato', sans-serif;
 $title: 'Oswald', sans-serif;
 
 $yellow: #FFD647;
+$orange: #faa230;
 
 body {
     font-family: $sans;
@@ -69,6 +70,7 @@ h1,h2 { font-family: $title; }
 
 .object {
     border-radius: 5px;
+
     &__photo {
         height: 300px;
         width: 100%;
@@ -78,11 +80,20 @@ h1,h2 { font-family: $title; }
     }
 
     &__info {
-        padding: 2rem 1rem;
+        padding: 2rem;
 
         &--basic {
             .flavor-title { margin-top: .5rem; }
-            button { font-family: $title; }
+            button { 
+                font-family: $title; 
+                box-shadow: 0 0.375em 0 $yellow; 
+                border: 0.125rem solid $yellow;
+                &:hover {
+                    box-shadow: 0 0.375em 0 $orange; 
+                    border: 0.125rem solid $orange;
+                }
+            }
+            .badge { font-size: 90%; margin-right: .5rem; }
             .price { 
                 color: #555451; 
                 text-align: center; 
@@ -92,6 +103,35 @@ h1,h2 { font-family: $title; }
 
         &--technical {
             .title { margin-top: .5rem; }
+
+            .box {
+                display: flex;
+                flex: row wrap;
+                
+                &:not(:last-of-type) { margin-bottom: .5rem; }
+
+                .module {
+                    flex: 1;
+                    margin-right: .5rem;
+                    border-bottom: 1px solid #a3a3a1;
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: .15rem;
+
+                    .left {
+                        .fa, .fas { margin-right: .5rem; }
+                    }
+
+                    .right {
+                        span { color: #232123; }
+                    }
+
+                    &:last-of-type {
+                        margin-right: 0;
+                        margin-left: .5rem;
+                    }
+                }
+            }
         }
     }
 
@@ -102,6 +142,7 @@ h1,h2 { font-family: $title; }
         @media screen and(min-width: 768px) { padding: 1rem 4rem; }
         @media screen and(min-width: 992px) { padding: 1rem 8rem; }
         @media screen and(min-width: 1200px) { padding: 1rem 12rem; }
+
         .gallery-img {
             flex: 1;
             height: 100px;
