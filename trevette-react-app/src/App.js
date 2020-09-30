@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import CurrentObject from './components/CurrentObject';
+import Garage from './components/Garage';
 
 import "jquery/dist/jquery.min.js";
 
@@ -24,8 +25,9 @@ function App() {
             <CurrentObject />
           </div>
         </div>
-        <div class="wrap-side">
-          Hej från höger
+        <div class="wrap-garage">
+          <h2>Tidigare i Garaget</h2>
+          <Garage />
         </div>
       </div>
     </div>

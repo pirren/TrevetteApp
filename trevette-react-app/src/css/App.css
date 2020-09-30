@@ -42,6 +42,7 @@ h1, h2 {
 
 .main-container {
   margin-top: 4rem;
+  margin-bottom: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,20 +62,40 @@ h1, h2 {
 }
 
 .wrap-main {
-  -webkit-box-flex: 7;
-      -ms-flex-positive: 7;
-          flex-grow: 7;
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
 }
 
-.wrap-side {
+.wrap-garage {
   -webkit-box-flex: 3;
-      -ms-flex-positive: 3;
-          flex-grow: 3;
+      -ms-flex: 3;
+          flex: 3;
   margin-left: 1rem;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  .wrap-garage {
+    margin-left: 0;
+  }
+  .wrap-garage h2 {
+    margin-top: 1rem;
+  }
+}
+
+.wrap-garage .module {
+  height: 120px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: 0px 2px 5px rgba(85, 84, 81, 0.25);
+          box-shadow: 0px 2px 5px rgba(85, 84, 81, 0.25);
+  border-radius: 5px;
+  margin: 1rem 0;
 }
 
 .object-wrap {
@@ -192,13 +213,13 @@ h1, h2 {
 
 @media screen and (min-width: 992px) {
   .object__gallery {
-    padding: 1rem 8rem;
+    padding: 1rem 0rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .object__gallery {
-    padding: 1rem 12rem;
+    padding: 1rem 6rem;
   }
 }
 
