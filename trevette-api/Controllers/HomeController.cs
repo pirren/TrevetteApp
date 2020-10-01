@@ -9,6 +9,8 @@ using trevette_api.Models;
 
 namespace trevette_api.Controllers
 {
+    [Route("api/v1.0/[controller]")]
+    [ApiController]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,14 +20,10 @@ namespace trevette_api.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            return Ok("Hej");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

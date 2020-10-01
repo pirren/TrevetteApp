@@ -28,3 +28,4 @@ yarn-error.log*
 **.vs/
 **.user
 private/
+**.sln

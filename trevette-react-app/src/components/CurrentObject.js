@@ -4,7 +4,7 @@ import ObjectGallery from './ObjectGallery'
 export default class CurrentObject extends Component {
     render() {
         var mainphotourl = {
-            backgroundImage: "url(gfx/inside-car.jpg)"
+            backgroundImage: "url(gfx/cars/1/1.jpg)"
         };
         return (
             <div className="object">

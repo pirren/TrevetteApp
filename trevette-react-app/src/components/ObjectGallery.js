@@ -5,9 +5,9 @@ export default class ObjectGallery extends Component {
         const objects = { };
         return (
             <div className="object__gallery">
-                <div className="gallery-img" style={{backgroundImage: "url(gfx/inside-car.jpg)"}}></div>
-                <div className="gallery-img" style={{backgroundImage: "url(gfx/corvette-red.jpg)"}}></div>
-                <div className="gallery-img" style={{backgroundImage: "url(gfx/corvette-yellow.jpg)"}}></div>
+                <div className="gallery-img" style={{backgroundImage: "url(gfx/cars/1/1.jpg)"}}></div>
+                <div className="gallery-img" style={{backgroundImage: "url(gfx/cars/1/2.jpg)"}}></div>
+                <div className="gallery-img" style={{backgroundImage: "url(gfx/cars/1/3.jpg)"}}></div>
             </div>
         )
     }
