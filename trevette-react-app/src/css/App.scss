@@ -10,6 +10,9 @@ $orange: #faa230;
 body {
     font-family: $sans;
     background-color: #F8F6F5;
+    @media screen and (max-width: 768px) {
+        font-size: 90%;
+    }
 }
 
 * { transition: .125s ease-in; }
@@ -19,10 +22,14 @@ h1,h2 { font-family: $title; }
 
 // navbar
 .trevette-logo { 
-    height: 50px; 
-    width: 197px;
+    height: 35px; 
+    width: 138px;
     background-image: url('/gfx/logo.svg');
     background-size: cover;
+    @media screen and (min-width: 769px) {
+        height: 50px; 
+        width: 197px;
+    }
 }
 
 .navbar {
@@ -64,7 +71,6 @@ h1,h2 { font-family: $title; }
         margin-left: 0; 
     }
 
-
     .module {
         height: 120px;
         width: 100%;
@@ -99,6 +105,7 @@ h1,h2 { font-family: $title; }
         padding: 2rem;
 
         &--basic {
+            margin-bottom: 2rem;
             .flavor-title { margin-top: .5rem; }
             button { 
                 font-family: $title; 
@@ -109,7 +116,11 @@ h1,h2 { font-family: $title; }
                     border: 0.125rem solid $orange;
                 }
             }
-            .badge { font-size: 90%; margin-right: .5rem; }
+            .badge { 
+                font-size: 90%; 
+                margin-right: .5rem; 
+                padding: .35rem .6rem;
+            }
             .price { 
                 color: #555451; 
                 text-align: center; 
@@ -122,13 +133,25 @@ h1,h2 { font-family: $title; }
 
             .box {
                 display: flex;
-                flex: row wrap;
+                flex-direction: column;
                 
-                &:not(:last-of-type) { margin-bottom: .5rem; }
+                @media screen and (min-width: 1200px) {
+                    flex-direction: row;
+                }
+                
+                &:not(:last-of-type) { 
+                    @media screen and (min-width: 1200px) {
+                        margin-bottom: .5rem; 
+                    }
+                }
 
                 .module {
+                    margin-bottom: .5rem; 
+                    @media screen and (min-width: 1200px) {
+                        margin-right: .5rem;
+                        margin-bottom: 0; 
+                    }
                     flex: 1;
-                    margin-right: .5rem;
                     border-bottom: 1px solid #a3a3a1;
                     display: flex;
                     justify-content: space-between;
@@ -144,7 +167,9 @@ h1,h2 { font-family: $title; }
 
                     &:last-of-type {
                         margin-right: 0;
-                        margin-left: .5rem;
+                        @media screen and (min-width: 1200px) {
+                            margin-left: .5rem;
+                        }
                     }
                 }
             }

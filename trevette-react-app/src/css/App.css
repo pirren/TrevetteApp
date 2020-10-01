@@ -5,6 +5,12 @@ body {
   background-color: #F8F6F5;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 90%;
+  }
+}
+
 * {
   -webkit-transition: .125s ease-in;
   transition: .125s ease-in;
@@ -19,10 +25,17 @@ h1, h2 {
 }
 
 .trevette-logo {
-  height: 50px;
-  width: 197px;
+  height: 35px;
+  width: 138px;
   background-image: url("/gfx/logo.svg");
   background-size: cover;
+}
+
+@media screen and (min-width: 769px) {
+  .trevette-logo {
+    height: 50px;
+    width: 197px;
+  }
 }
 
 .navbar {
@@ -122,6 +135,10 @@ h1, h2 {
   padding: 2rem;
 }
 
+.object__info--basic {
+  margin-bottom: 2rem;
+}
+
 .object__info--basic .flavor-title {
   margin-top: .5rem;
 }
@@ -142,6 +159,7 @@ h1, h2 {
 .object__info--basic .badge {
   font-size: 90%;
   margin-right: .5rem;
+  padding: .35rem .6rem;
 }
 
 .object__info--basic .price {
@@ -158,20 +176,32 @@ h1, h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row;
-      -ms-flex: row wrap;
-          flex: row wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.object__info--technical .box:not(:last-of-type) {
-  margin-bottom: .5rem;
+@media screen and (min-width: 1200px) {
+  .object__info--technical .box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .object__info--technical .box:not(:last-of-type) {
+    margin-bottom: .5rem;
+  }
 }
 
 .object__info--technical .box .module {
+  margin-bottom: .5rem;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin-right: .5rem;
   border-bottom: 1px solid #a3a3a1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -180,6 +210,13 @@ h1, h2 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-bottom: .15rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .object__info--technical .box .module {
+    margin-right: .5rem;
+    margin-bottom: 0;
+  }
 }
 
 .object__info--technical .box .module .left .fa, .object__info--technical .box .module .left .fas {
@@ -192,7 +229,12 @@ h1, h2 {
 
 .object__info--technical .box .module:last-of-type {
   margin-right: 0;
-  margin-left: .5rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .object__info--technical .box .module:last-of-type {
+    margin-left: .5rem;
+  }
 }
 
 .object__gallery {
