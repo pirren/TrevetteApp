@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class ObjectGallery extends Component {
+export default class CarGallery extends Component {
     render() {
         const objects = { };
         return (
