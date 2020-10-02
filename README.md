@@ -3,13 +3,7 @@
 </p>
 <h2 align="center">Trevette Webbsida</h2>
 <p align="center">
-<img src="https://img.shields.io/github/repo-size/pirren/TrevetteApp?style=plastic">
-<img src="https://img.shields.io/github/languages/count/pirren/TrevetteApp?style=plastic">
-<img src="https://img.shields.io/github/languages/top/pirren/TrevetteApp?style=plastic">
-<img src="https://img.shields.io/github/last-commit/pirren/TrevetteApp?color=red&style=plastic">
+<img src="https://dev.azure.com/pierrenygard/Trevette/_apis/build/status/pirren.TrevetteApp?branchName=master">
 </div>
-<!--
-<p align="center"><a href="#">Live Demo</a> · <a href="https://github.com/pirren">Byggd av Pierre</a></p>
 
-<h1>Innehåll</h1>
--->
+Bara ett hobbyprojekt jag bygger åt en familjemedlem. Använder ett .NET Core API och Frontend i React.js. 
