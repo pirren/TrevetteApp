@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using trevette_api.Models;
+using Serilog;
 
 namespace trevette_api.Controllers
 {
@@ -13,16 +9,14 @@ namespace trevette_api.Controllers
     [ApiController]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController()
         {
-            _logger = logger;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
+            Log.Information("Test");
             return Ok("Hej");
         }
 
