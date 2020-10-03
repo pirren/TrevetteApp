@@ -7,9 +7,9 @@ namespace trevette_api.Controllers
 {
     [Route("api/v1.0/[controller]")]
     [ApiController]
-    public class HomeController : Controller
+    public class CarController : Controller
     {
-        public HomeController()
+        public CarController()
         {
         }
 
@@ -18,12 +18,6 @@ namespace trevette_api.Controllers
         {
             Log.Information("Test");
             return Ok("Hej");
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
