@@ -14,26 +14,22 @@ namespace trevette_api.Persistence.Repositories
             _context = context;
         }
 
-        public async Task Add<T>(T entity) where T : class
+        public async Task AddAsync<T>(T entity) where T : class
         {
             Log.Information("Adding entity of type {0}", entity.GetType());
-            await _context.AddAsync(entity);
-
-        }
-
-        public void Delete<T>(T entity) where T : class
-        {
-            throw new System.NotImplementedException();
+            await _context.Set<T>().AddAsync(entity);
         }
 
         public void Update<T>(T entity) where T : class
         {
-            throw new System.NotImplementedException();
+            Log.Information("Updating entity of type {0}", entity.GetType());
+            _context.Set<T>().Update(entity);
         }
 
-        public Task<bool> Save()
+        public void Remove<T>(T entity) where T : class
         {
-            throw new System.NotImplementedException();
+            Log.Information("Removing entity of type {0}", entity.GetType());
+            _context.Set<T>().Remove(entity);
         }
     }
 }

@@ -35,12 +35,11 @@ class App extends Component {
           }
         ]
       }
-    
   }
 
   componentDidMount() {
-    // axios.get('https://jsonplaceholder.typicode.com/todos?_limit=1')
-    // .then(response => this.setState({todos: response.data}));
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=1')
+    .then(response => this.setState({todos: response.data}));
   }
 
   render() {

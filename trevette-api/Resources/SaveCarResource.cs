@@ -10,11 +10,5 @@ namespace trevette_api.Resources
         public int Year { get; set; }
         [Required]
         public int Mileage { get; set; }
-        [Required]
-        [MaxLength(50)]
-        public string Title { get; set; }
-        [Required]
-        [MaxLength(500)]
-        public string Description { get; set; }
     }
 }

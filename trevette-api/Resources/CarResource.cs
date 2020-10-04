@@ -9,11 +9,6 @@ namespace trevette_api.Resources
         public string Model { get; set; }
         public int Year { get; set; }
         public int Mileage { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public int? Price { get; set; }
-        public bool InStock { get; set; }
-        public ICollection<CarBadge> CarBadges { get; set; }
         public ICollection<Photo> Photos { get; set; }
     }
 }
