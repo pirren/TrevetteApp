@@ -4,17 +4,17 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  buildConfiguration: 'Release'
+
 steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: 'trevette-api/trevette-api.csproj'
     
-- task: VSTest@2
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      trevette-api.Tests\**\*test*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**
-    searchFolder: '$(System.DefaultWorkingDirectory)'
+- task: DotNetCoreCLI@2
+  inputs:  
+    command: 'test'
+    projects: 'trevette-api.Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
