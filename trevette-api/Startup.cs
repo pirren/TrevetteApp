@@ -31,6 +31,7 @@ namespace trevette_api
             });
             services.AddScoped<ICarRepository, CarRepository>();
             services.AddScoped<ICarService, CarService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddAutoMapper(typeof(Startup));
 

@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using Serilog;
+using System;
+using System.Threading.Tasks;
 using trevette_api.Domain.Models;
 using trevette_api.Domain.Repositories;
 using trevette_api.Domain.Services;
@@ -22,9 +24,73 @@ namespace trevette_api.Services
             return await _repository.ListAsync();
         }
 
-        public async Task<SaveCarResponse> SaveAsync(Car car)
+        public async Task<Car> GetByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            return await _repository.FindByIdAsync(id);
+        }
+
+        public async Task<CarResponse> SaveAsync(Car car)
+        {
+            try
+            {
+                await _repository.AddAsync(car);
+                await _unitOfWork.CompleteAsync();
+
+                return new CarResponse(car);
+            }
+            catch (Exception ex)
+            {
+                Log.Error("An error occurred when saving the car: {0}", ex.Message);
+                return new CarResponse($"An error occurred when saving the car: {ex.Message}");
+            }
+        }
+
+        public async Task<CarResponse> UpdateAsync(int id, Car car)
+        {
+            var existingCar = await _repository.FindByIdAsync(id);
+
+            if (existingCar == null)
+                return new CarResponse("Car not found");
+
+            existingCar.Model = car.Model;
+            existingCar.Year = car.Year;
+            existingCar.Mileage = car.Mileage;
+            existingCar.Title = car.Title;
+            existingCar.Description = car.Description;
+
+            try
+            {
+                _repository.Update(existingCar);
+                await _unitOfWork.CompleteAsync();
+
+                return new CarResponse(existingCar);
+            } 
+            catch (Exception ex)
+            {
+                Log.Error("An error occurred when updating the car: {0}", ex.Message);
+                return new CarResponse($"An error occurred when updating the car: {ex.Message}");
+            }
+        }
+
+        public async Task<CarResponse> DeleteAsync(int id)
+        {
+            var existingCar = await _repository.FindByIdAsync(id);
+
+            if (existingCar == null)
+                return new CarResponse("Car not found.");
+
+            try
+            {
+                _repository.Remove(existingCar);
+                await _unitOfWork.CompleteAsync();
+
+                return new CarResponse(existingCar);
+            }
+            catch(Exception ex)
+            {
+                Log.Error("An error occurred when deleting the car: {0}", ex.Message);
+                return new CarResponse($"An error occurred when deleting the car: {ex.Message}");
+            }
         }
     }
 }

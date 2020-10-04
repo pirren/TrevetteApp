@@ -21,15 +21,25 @@ namespace trevette_api.Persistence.Repositories
             return await _context.Cars.ToArrayAsync();
         }
 
-        public Task<Car[]> GetAsync(int id)
+        public async Task<Car> FindByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Cars.FindAsync(id);
         }
 
         public async Task AddAsync(Car car)
         {
             Log.Information("Adding car");
             await _context.Cars.AddAsync(car);
+        }
+
+        public void Update(Car car)
+        {
+            _context.Cars.Update(car);
+        }
+
+        public void Remove(Car car)
+        {
+            _context.Cars.Remove(car);
         }
     }
 }
