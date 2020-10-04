@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using trevette_api.Domain.Services;
 
 namespace trevette_api.Controllers
 {

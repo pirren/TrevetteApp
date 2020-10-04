@@ -30,7 +30,9 @@ namespace trevette_api
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddScoped<ICarRepository, CarRepository>();
+            services.AddScoped<ISalesObjectRepository, SalesObjectRepository>();
             services.AddScoped<ICarService, CarService>();
+            services.AddScoped<ISalesObjectService, SalesObjectService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddAutoMapper(typeof(Startup));
