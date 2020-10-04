@@ -3,7 +3,8 @@ import Badge from './Badge'
 
 export default class CarBadges extends Component {
     render() {
-        return this.props.badges.map((badge) => (
+        const badges = ["V8 Motor", "Läderinredning" , "Specialobjekt" ];
+        return badges.map((badge) => (
             <Badge badge={badge} />
         ));
     }

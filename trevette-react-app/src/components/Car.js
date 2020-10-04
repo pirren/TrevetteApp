@@ -14,7 +14,7 @@ export default class Car extends Component {
                 <div className="object__info">
                     <div className="object__info--basic">
                         <h2>{car.model}</h2>
-                        <CarBadges badges={car.badges} />
+                        <CarBadges />
                         <h4 className="flavor-title">{car.title}</h4>
                         <p>{car.description}</p>
                         <div className="sale">
