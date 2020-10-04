@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using trevette_api.Domain.Repositories;
 using trevette_api.Domain.Services;
 using trevette_api.Persistence.Contexts;
 using trevette_api.Persistence.Repositories;
 using trevette_api.Services;
-using trevette_api.Services.Domain.Repositories;
 
 namespace trevette_api
 {

@@ -1,15 +1,15 @@
 ﻿using Serilog;
 using System.Threading.Tasks;
+using trevette_api.Domain.Repositories;
 using trevette_api.Persistence.Contexts;
-using trevette_api.Services.Domain.Repositories;
 
 namespace trevette_api.Persistence.Repositories
 {
-    public class Repository : IRepository
+    public class BaseRepository : IBaseRepository
     {
         protected readonly DataContext _context;
 
-        public Repository(DataContext context)
+        public BaseRepository(DataContext context)
         {
             _context = context;
         }

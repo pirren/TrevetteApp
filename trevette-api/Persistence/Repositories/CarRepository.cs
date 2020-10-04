@@ -3,12 +3,12 @@ using Serilog;
 using System;
 using System.Threading.Tasks;
 using trevette_api.Domain.Models;
+using trevette_api.Domain.Repositories;
 using trevette_api.Persistence.Contexts;
-using trevette_api.Services.Domain.Repositories;
 
 namespace trevette_api.Persistence.Repositories
 {
-    public class CarRepository : Repository, ICarRepository
+    public class CarRepository : BaseRepository, ICarRepository
     {
         public CarRepository(DataContext context) : base(context)
         {
@@ -24,6 +24,12 @@ namespace trevette_api.Persistence.Repositories
         public Task<Car[]> GetAsync(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task AddAsync(Car car)
+        {
+            Log.Information("Adding car");
+            await _context.Cars.AddAsync(car);
         }
     }
 }

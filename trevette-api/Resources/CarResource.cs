@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using trevette_api.Domain.Models;
 
 namespace trevette_api.Resources
 {
-    public class CarDTO
+    public class CarResource
     {
         public int CarId { get; set; }
         public string Model { get; set; }
