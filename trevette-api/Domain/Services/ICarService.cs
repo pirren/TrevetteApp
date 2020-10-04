@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using trevette_api.Domain.Models;
 using trevette_api.Domain.Services.Communication;
-using trevette_api.Resources;
 
 namespace trevette_api.Domain.Services
 {

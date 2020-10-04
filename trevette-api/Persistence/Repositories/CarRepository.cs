@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Serilog;
-using System;
 using System.Threading.Tasks;
 using trevette_api.Domain.Models;
 using trevette_api.Domain.Repositories;

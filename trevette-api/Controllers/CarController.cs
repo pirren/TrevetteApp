@@ -1,10 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Threading.Tasks;
 using trevette_api.Domain.Models;
 using trevette_api.Domain.Services;
@@ -19,13 +14,11 @@ namespace trevette_api.Controllers
     {
         private readonly ICarService _service;
         private readonly IMapper _mapper;
-        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public CarController(ICarService service, IMapper mapper, IWebHostEnvironment hostingEnvironment)
+        public CarController(ICarService service, IMapper mapper)
         {
             _service = service;
             _mapper = mapper;
-            _hostingEnvironment = hostingEnvironment;
         }
 
         [HttpGet]

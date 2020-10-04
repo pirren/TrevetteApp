@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace trevette_api.Resources
+﻿namespace trevette_api.Resources
 {
     public class PhotoResource
     {

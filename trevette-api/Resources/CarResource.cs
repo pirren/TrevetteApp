@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using trevette_api.Domain.Models;
 
 namespace trevette_api.Resources
 {
