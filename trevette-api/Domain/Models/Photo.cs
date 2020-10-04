@@ -6,7 +6,7 @@ namespace trevette_api.Domain.Models
     {
         [Key]
         public int PhotoId { get; set; }
-        public string FileSuffix { get; set; }
+        public string FileName { get; set; }
         public Car Car { get; set; }
     }
 }

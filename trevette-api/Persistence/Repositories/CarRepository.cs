@@ -11,20 +11,18 @@ namespace trevette_api.Persistence.Repositories
     public class CarRepository : BaseRepository, ICarRepository
     {
         public CarRepository(DataContext context) : base(context)
-        {
-
-        }
+        { }
 
         public async Task<Car[]> ListAsync()
         {
             Log.Information("Getting all cars");
-            return await _context.Cars.ToArrayAsync();
+            return await _context.Cars.Include(c => c.Photos).ToArrayAsync();
         }
 
         public async Task<Car> FindByIdAsync(int id)
         {
             Log.Information("Getting car by id: {0}", id);
-            return await _context.Cars.FindAsync(id);
+            return await _context.Cars.Include(c => c.Photos).FirstOrDefaultAsync(c => c.CarId == id);
         }
     }
 }

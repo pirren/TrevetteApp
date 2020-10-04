@@ -28,7 +28,7 @@ namespace trevette_api.Data.Migrations
                 {
                     PhotoId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FileSuffix = table.Column<string>(nullable: true),
+                    FileName = table.Column<string>(nullable: true),
                     CarId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -79,21 +79,21 @@ namespace trevette_api.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Photo",
-                columns: new[] { "PhotoId", "CarId", "FileSuffix" },
+                columns: new[] { "PhotoId", "CarId", "FileName" },
                 values: new object[,]
                 {
-                    { 1, 1, ".jpg" },
-                    { 2, 1, ".jpg" },
-                    { 3, 1, ".jpg" },
-                    { 4, 2, ".jpg" },
-                    { 5, 3, ".jpg" },
-                    { 6, 4, ".jpg" }
+                    { 1, 1, "1.jpg" },
+                    { 2, 1, "2.jpg" },
+                    { 3, 1, "3.jpg" },
+                    { 4, 2, "4.jpg" },
+                    { 5, 3, "5.jpg" },
+                    { 6, 4, "6.jpg" }
                 });
 
             migrationBuilder.InsertData(
                 table: "SalesObject",
                 columns: new[] { "SalesObjectId", "CarId", "Description", "InStock", "Price", "StartDate", "Title" },
-                values: new object[] { 1, 1, "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.", true, null, new DateTime(2020, 10, 4, 21, 28, 7, 86, DateTimeKind.Local).AddTicks(6795), "Tidlös maskin" });
+                values: new object[] { 1, 1, "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.", true, null, new DateTime(2020, 10, 4, 21, 52, 40, 2, DateTimeKind.Local).AddTicks(3162), "Tidlös maskin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Photo_CarId",

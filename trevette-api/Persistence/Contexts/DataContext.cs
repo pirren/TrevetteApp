@@ -59,32 +59,32 @@ namespace trevette_api.Persistence.Contexts
             modelBuilder.Entity<Photo>().HasData(new
             {
                 PhotoId = 1,
-                FileSuffix = ".jpg",
+                FileName = "1.jpg",
                 CarId = 1
             },new
             {
                 PhotoId = 2,
-                FileSuffix = ".jpg",
+                FileName = "2.jpg",
                 CarId = 1
             },new
             {
                 PhotoId = 3,
-                FileSuffix = ".jpg",
+                FileName = "3.jpg",
                 CarId = 1
             }, new
             {
                 PhotoId = 4,
-                FileSuffix = ".jpg",
+                FileName = "4.jpg",
                 CarId = 2
             }, new
             {
                 PhotoId = 5,
-                FileSuffix = ".jpg",
+                FileName = "5.jpg",
                 CarId = 3
             }, new
             {
                 PhotoId = 6,
-                FileSuffix = ".jpg",
+                FileName = "6.jpg",
                 CarId = 4
             });
         }

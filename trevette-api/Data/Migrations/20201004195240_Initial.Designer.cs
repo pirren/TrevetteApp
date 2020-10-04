@@ -10,7 +10,7 @@ using trevette_api.Persistence.Contexts;
 namespace trevette_api.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201004192807_Initial")]
+    [Migration("20201004195240_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -82,7 +82,7 @@ namespace trevette_api.Data.Migrations
                     b.Property<int?>("CarId")
                         .HasColumnType("int");
 
-                    b.Property<string>("FileSuffix")
+                    b.Property<string>("FileName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PhotoId");
@@ -96,37 +96,37 @@ namespace trevette_api.Data.Migrations
                         {
                             PhotoId = 1,
                             CarId = 1,
-                            FileSuffix = ".jpg"
+                            FileName = "1.jpg"
                         },
                         new
                         {
                             PhotoId = 2,
                             CarId = 1,
-                            FileSuffix = ".jpg"
+                            FileName = "2.jpg"
                         },
                         new
                         {
                             PhotoId = 3,
                             CarId = 1,
-                            FileSuffix = ".jpg"
+                            FileName = "3.jpg"
                         },
                         new
                         {
                             PhotoId = 4,
                             CarId = 2,
-                            FileSuffix = ".jpg"
+                            FileName = "4.jpg"
                         },
                         new
                         {
                             PhotoId = 5,
                             CarId = 3,
-                            FileSuffix = ".jpg"
+                            FileName = "5.jpg"
                         },
                         new
                         {
                             PhotoId = 6,
                             CarId = 4,
-                            FileSuffix = ".jpg"
+                            FileName = "6.jpg"
                         });
                 });
 
@@ -168,7 +168,7 @@ namespace trevette_api.Data.Migrations
                             CarId = 1,
                             Description = "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.",
                             InStock = true,
-                            StartDate = new DateTime(2020, 10, 4, 21, 28, 7, 86, DateTimeKind.Local).AddTicks(6795),
+                            StartDate = new DateTime(2020, 10, 4, 21, 52, 40, 2, DateTimeKind.Local).AddTicks(3162),
                             Title = "Tidlös maskin"
                         });
                 });
