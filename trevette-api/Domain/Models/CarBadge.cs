@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace trevette_api.Models
+﻿namespace trevette_api.Domain.Models
 {
     public class CarBadge
     {

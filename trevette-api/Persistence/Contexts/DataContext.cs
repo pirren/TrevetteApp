@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using trevette_api.Domain.Models;
 
-namespace trevette_api.Models
+namespace trevette_api.Persistence.Contexts
 {
     public class DataContext : DbContext
     {

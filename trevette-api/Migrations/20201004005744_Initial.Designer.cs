@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using trevette_api.Models;
+using trevette_api.Persistence.Contexts;
 
 namespace trevette_api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201001232534_Initial")]
+    [Migration("20201004005744_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace trevette_api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("trevette_api.Models.Badge", b =>
+            modelBuilder.Entity("trevette_api.Domain.Models.Badge", b =>
                 {
                     b.Property<int>("BadgeId")
                         .ValueGeneratedOnAdd()
@@ -53,7 +53,7 @@ namespace trevette_api.Migrations
                         });
                 });
 
-            modelBuilder.Entity("trevette_api.Models.Car", b =>
+            modelBuilder.Entity("trevette_api.Domain.Models.Car", b =>
                 {
                     b.Property<int>("CarId")
                         .ValueGeneratedOnAdd()
@@ -98,7 +98,7 @@ namespace trevette_api.Migrations
                         });
                 });
 
-            modelBuilder.Entity("trevette_api.Models.CarBadge", b =>
+            modelBuilder.Entity("trevette_api.Domain.Models.CarBadge", b =>
                 {
                     b.Property<int>("CarId")
                         .HasColumnType("int");
@@ -130,7 +130,7 @@ namespace trevette_api.Migrations
                         });
                 });
 
-            modelBuilder.Entity("trevette_api.Models.Photo", b =>
+            modelBuilder.Entity("trevette_api.Domain.Models.Photo", b =>
                 {
                     b.Property<int>("PhotoId")
                         .ValueGeneratedOnAdd()
@@ -150,24 +150,24 @@ namespace trevette_api.Migrations
                     b.ToTable("Photo");
                 });
 
-            modelBuilder.Entity("trevette_api.Models.CarBadge", b =>
+            modelBuilder.Entity("trevette_api.Domain.Models.CarBadge", b =>
                 {
-                    b.HasOne("trevette_api.Models.Badge", "Badge")
+                    b.HasOne("trevette_api.Domain.Models.Badge", "Badge")
                         .WithMany("CarBadges")
                         .HasForeignKey("BadgeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("trevette_api.Models.Car", "Car")
+                    b.HasOne("trevette_api.Domain.Models.Car", "Car")
                         .WithMany("CarBadges")
                         .HasForeignKey("CarId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("trevette_api.Models.Photo", b =>
+            modelBuilder.Entity("trevette_api.Domain.Models.Photo", b =>
                 {
-                    b.HasOne("trevette_api.Models.Car", "Car")
+                    b.HasOne("trevette_api.Domain.Models.Car", "Car")
                         .WithMany("Photos")
                         .HasForeignKey("CarId");
                 });
