@@ -9,11 +9,13 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: 'Build trevette-api'
   inputs:
     command: 'build'
     projects: 'trevette-api/trevette-api.csproj'
     
 - task: DotNetCoreCLI@2
+  displayName: 'Test trevette-api'
   inputs:  
     command: 'test'
     projects: 'trevette-api.Tests/*.csproj'
