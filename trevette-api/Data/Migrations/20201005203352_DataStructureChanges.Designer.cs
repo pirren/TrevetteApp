@@ -10,8 +10,8 @@ using trevette_api.Persistence.Contexts;
 namespace trevette_api.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20201004195240_Initial")]
-    partial class Initial
+    [Migration("20201005203352_DataStructureChanges")]
+    partial class DataStructureChanges
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,10 +34,15 @@ namespace trevette_api.Data.Migrations
                     b.Property<string>("Model")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("SalesObjectId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
                     b.HasKey("CarId");
+
+                    b.HasIndex("SalesObjectId");
 
                     b.ToTable("Car");
 
@@ -47,6 +52,7 @@ namespace trevette_api.Data.Migrations
                             CarId = 1,
                             Mileage = 12000,
                             Model = "Porsche 911 Carrera",
+                            SalesObjectId = 1,
                             Year = 1980
                         },
                         new
@@ -54,6 +60,7 @@ namespace trevette_api.Data.Migrations
                             CarId = 2,
                             Mileage = 40000,
                             Model = "Volvo 240",
+                            SalesObjectId = 2,
                             Year = 1980
                         },
                         new
@@ -137,9 +144,6 @@ namespace trevette_api.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CarId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -157,33 +161,38 @@ namespace trevette_api.Data.Migrations
 
                     b.HasKey("SalesObjectId");
 
-                    b.HasIndex("CarId");
-
                     b.ToTable("SalesObject");
 
                     b.HasData(
                         new
                         {
                             SalesObjectId = 1,
-                            CarId = 1,
                             Description = "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.",
                             InStock = true,
-                            StartDate = new DateTime(2020, 10, 4, 21, 52, 40, 2, DateTimeKind.Local).AddTicks(3162),
+                            StartDate = new DateTime(2020, 10, 5, 22, 33, 52, 368, DateTimeKind.Local).AddTicks(618),
                             Title = "Tidlös maskin"
+                        },
+                        new
+                        {
+                            SalesObjectId = 2,
+                            Description = "Denna gamla Volvo är en klassisk bakhjulsdriven personbil och går aldrig fel. Rullar fint.",
+                            InStock = false,
+                            StartDate = new DateTime(2020, 10, 5, 22, 33, 52, 370, DateTimeKind.Local).AddTicks(7862),
+                            Title = "Odödlig"
                         });
+                });
+
+            modelBuilder.Entity("trevette_api.Domain.Models.Car", b =>
+                {
+                    b.HasOne("trevette_api.Domain.Models.SalesObject", "SalesObject")
+                        .WithMany()
+                        .HasForeignKey("SalesObjectId");
                 });
 
             modelBuilder.Entity("trevette_api.Domain.Models.Photo", b =>
                 {
                     b.HasOne("trevette_api.Domain.Models.Car", "Car")
                         .WithMany("Photos")
-                        .HasForeignKey("CarId");
-                });
-
-            modelBuilder.Entity("trevette_api.Domain.Models.SalesObject", b =>
-                {
-                    b.HasOne("trevette_api.Domain.Models.Car", "Car")
-                        .WithMany()
                         .HasForeignKey("CarId");
                 });
 #pragma warning restore 612, 618

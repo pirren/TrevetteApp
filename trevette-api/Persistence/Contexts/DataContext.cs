@@ -26,6 +26,14 @@ namespace trevette_api.Persistence.Contexts
                 Description = "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.",
                 InStock = true,
                 StartDate = DateTime.Now
+            }, new
+            {
+                SalesObjectId = 2,
+                CarId = 2,
+                Title = "Odödlig",
+                Description = "Denna gamla Volvo är en klassisk bakhjulsdriven personbil och går aldrig fel. Rullar fint.",
+                InStock = false,
+                StartDate = DateTime.Now
             });
             modelBuilder.Entity<Car>().ToTable("Car");
             modelBuilder.Entity<Car>().HasKey(c => c.CarId);
@@ -34,13 +42,15 @@ namespace trevette_api.Persistence.Contexts
                 CarId = 1,
                 Model = "Porsche 911 Carrera",
                 Year = 1980,
-                Mileage = 12000
+                Mileage = 12000,
+                SalesObjectId = 1
             }, new
             {
                 CarId = 2,
                 Model = "Volvo 240",
                 Year = 1980,
-                Mileage = 40000
+                Mileage = 40000,
+                SalesObjectId = 2
             }, new
             {
                 CarId = 3,

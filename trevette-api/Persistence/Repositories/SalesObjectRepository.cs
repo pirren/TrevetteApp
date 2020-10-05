@@ -18,10 +18,7 @@ namespace trevette_api.Persistence.Repositories
         public async Task<SalesObject[]> ListAsync()
         {
             Log.Information("Getting all salesobjects");
-            return await _context.SalesObjects
-                .Include(so => so.Car)
-                .ThenInclude(c => c.Photos)
-                .ToArrayAsync();
+            return await _context.SalesObjects.ToArrayAsync();
         }
 
         public async Task<SalesObject[]> ListInstockAsync()
@@ -29,8 +26,6 @@ namespace trevette_api.Persistence.Repositories
             Log.Information("Getting all salesobjects in stock");
             return await _context.SalesObjects
                 .Where(so => so.InStock == true)
-                .Include(so => so.Car)
-                .ThenInclude(c => c.Photos)
                 .ToArrayAsync();
         }
 
@@ -38,8 +33,6 @@ namespace trevette_api.Persistence.Repositories
         {
             Log.Information("Getting salesobject by id: {0}", id);
             return await _context.SalesObjects
-                .Include(so => so.Car)
-                .ThenInclude(c => c.Photos)
                 .FirstOrDefaultAsync(so => so.SalesObjectId == id);
         }
     }

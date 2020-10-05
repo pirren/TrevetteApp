@@ -10,6 +10,7 @@ namespace trevette_api.Domain.Models
         public string Model { get; set; }
         public int Year { get; set; }
         public int Mileage { get; set; }
+        public SalesObject SalesObject { get; set; }
         public ICollection<Photo> Photos { get; set; }
     }
 }
