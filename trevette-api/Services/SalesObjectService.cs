@@ -23,6 +23,11 @@ namespace trevette_api.Services
             return await _repository.ListAsync();
         }
 
+        public async Task<SalesObject[]> ListInstockAsync()
+        {
+            return await _repository.ListInstockAsync();
+        }
+
         public Task<SalesObject> GetByIdAsync(int id)
         {
             throw new NotImplementedException();

@@ -7,6 +7,7 @@ namespace trevette_api.Domain.Services
     public interface ISalesObjectService
     {
         Task<SalesObject[]> ListAsync();
+        Task<SalesObject[]> ListInstockAsync();
         Task<SalesObject> GetByIdAsync(int id);
         Task<SalesObjectResponse> SaveAsync();
         Task<SalesObjectResponse> DeleteAsync();

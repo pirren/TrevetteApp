@@ -27,5 +27,14 @@ namespace trevette_api.Controllers
             var resources = _mapper.Map<SalesObject[], SalesObjectResource[]>(salesobjects);
             return resources;
         }
+
+        [HttpGet]
+        [Route("Instock")]
+        public async Task<SalesObjectResource[]> GetAllInstockAsync()
+        {
+            var salesobjects = await _service.ListInstockAsync();
+            var resources = _mapper.Map<SalesObject[], SalesObjectResource[]>(salesobjects);
+            return resources;
+        }
     }
 }
