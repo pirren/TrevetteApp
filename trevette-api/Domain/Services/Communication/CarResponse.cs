@@ -16,7 +16,7 @@ namespace trevette_api.Domain.Services.Communication
         /// </summary>
         /// <param name="car">Saved car.</param>
         /// <returns>Response.</returns>
-        public CarResponse(Car car) : this(true, string.Empty, car) 
+        public CarResponse(Car car) : this(true, string.Empty, car)
         { }
 
         /// <summary>

@@ -15,13 +15,17 @@ namespace trevette_api.Persistence.Repositories
         public async Task<Car[]> ListAsync()
         {
             Log.Information("Getting all cars");
-            return await _context.Cars.Include(c => c.Photos).ToArrayAsync();
+            return await _context.Cars.Include(c => c.Photos)
+                .Include(c => c.SalesObject)
+                .ToArrayAsync();
         }
 
         public async Task<Car> FindByIdAsync(int id)
         {
             Log.Information("Getting car by id: {0}", id);
-            return await _context.Cars.Include(c => c.Photos).FirstOrDefaultAsync(c => c.CarId == id);
+            return await _context.Cars.Include(c => c.Photos)
+                .Include(c => c.SalesObject)
+                .FirstOrDefaultAsync(c => c.CarId == id);
         }
     }
 }

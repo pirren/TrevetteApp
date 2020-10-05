@@ -63,7 +63,7 @@ namespace trevette_api.Services
                 await _unitOfWork.CompleteAsync();
 
                 return new CarResponse(existingCar);
-            } 
+            }
             catch (Exception ex)
             {
                 Log.Error("An error occurred when updating the car: {0}", ex.Message);
@@ -85,7 +85,7 @@ namespace trevette_api.Services
 
                 return new CarResponse(existingCar);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.Error("An error occurred when deleting the car: {0}", ex.Message);
                 return new CarResponse($"An error occurred when deleting the car: {ex.Message}");

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using trevette_api.Domain.Models;
+﻿using trevette_api.Domain.Models;
 
 namespace trevette_api.Domain.Services.Communication
 {

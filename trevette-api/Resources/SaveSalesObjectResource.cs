@@ -6,8 +6,6 @@ namespace trevette_api.Resources
     public class SaveSalesObjectResource
     {
         [Required]
-        public Car Car { get; set; }
-        [Required]
         [MaxLength(50)]
         public string Title { get; set; }
         [MaxLength(500)]

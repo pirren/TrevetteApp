@@ -1,6 +1,5 @@
 using Moq;
 using Moq.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using trevette_api.Domain.Models;
 using trevette_api.Persistence.Contexts;

@@ -71,12 +71,12 @@ namespace trevette_api.Persistence.Contexts
                 PhotoId = 1,
                 FileName = "1.jpg",
                 CarId = 1
-            },new
+            }, new
             {
                 PhotoId = 2,
                 FileName = "2.jpg",
                 CarId = 1
-            },new
+            }, new
             {
                 PhotoId = 3,
                 FileName = "3.jpg",
