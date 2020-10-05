@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using trevette_api.Domain.Models;
+using trevette_api.Domain.Repositories;
 using trevette_api.Domain.Services;
 using trevette_api.Domain.Services.Communication;
 
@@ -10,22 +11,19 @@ namespace trevette_api.Services
 {
     public class SalesObjectService : ISalesObjectService
     {
-        public SalesObjectService()
+        private readonly ISalesObjectRepository _repository;
+
+        public SalesObjectService(ISalesObjectRepository repository)
         {
-            throw new NotImplementedException();
+            _repository = repository;
         }
 
-        public Task<SalesObjectResponse> DeleteAsync()
+        public async Task<SalesObject[]> ListAsync()
         {
-            throw new NotImplementedException();
+            return await _repository.ListAsync();
         }
 
         public Task<SalesObject> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<SalesObject[]> ListAsync()
         {
             throw new NotImplementedException();
         }
@@ -36,6 +34,11 @@ namespace trevette_api.Services
         }
 
         public Task<SalesObjectResponse> UpdateAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<SalesObjectResponse> DeleteAsync()
         {
             throw new NotImplementedException();
         }

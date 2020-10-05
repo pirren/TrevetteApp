@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using trevette_api.Domain.Models;
 using trevette_api.Domain.Services;
+using trevette_api.Resources;
 
 namespace trevette_api.Controllers
 {
@@ -15,6 +18,14 @@ namespace trevette_api.Controllers
         {
             _service = service;
             _mapper = mapper;
+        }
+
+        [HttpGet]
+        public async Task<SalesObjectResource[]> GetAllAsync()
+        {
+            var salesobjects = await _service.ListAsync();
+            var resources = _mapper.Map<SalesObject[], SalesObjectResource[]>(salesobjects);
+            return resources;
         }
     }
 }

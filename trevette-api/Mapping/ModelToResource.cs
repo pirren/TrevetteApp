@@ -9,6 +9,7 @@ namespace trevette_api.Mapping
         public ModelToResource()
         {
             CreateMap<Car, CarResource>();
+            CreateMap<SalesObject, SalesObjectResource>();
             CreateMap<Photo, PhotoResource>();
         }
     }

@@ -10,6 +10,7 @@ namespace trevette_api.Mapping
         {
             CreateMap<SaveCarResource, Car>();
             CreateMap<PhotoResource, Photo>();
+            CreateMap<SalesObjectResource, SalesObject>();
         }
     }
 }
