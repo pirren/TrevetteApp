@@ -13,14 +13,24 @@ import "./css/App.css";
 import axios from 'axios';
 
 class App extends Component {
-  state = {
-    car: []
+  constructor(props) {
+    super(props);
+    this.state = {
+      car: [],
+      salesObject: ""
+    }
   }
+
 
   componentDidMount() {
     axios.get('https://localhost:44342/api/v1.0/Car/Forsale')
-    .then(response => console.log(response.data));
-    // .then(response => ));
+    // .then(response => this.setState({car: response.data[0]}))
+    .then(response =>  {
+
+      console.log('full response: ', response.data)
+      console.log('sales object', response.data.salesobject.title)
+      })
+    .catch(err => {console.log(err)}); 
   }
 
   render() {
