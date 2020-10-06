@@ -29,6 +29,15 @@ namespace trevette_api.Controllers
             return resources;
         }
 
+        [HttpGet]
+        [Route("Forsale")]
+        public async Task<CarResource[]> GetAllForSaleAsync()
+        {
+            var cars = await _service.ListForsaleAsync();
+            var resources = _mapper.Map<Car[], CarResource[]>(cars);
+            return resources;
+        }
+
         [HttpGet("{id}")]
         public async Task<CarResource> GetByIdAsync(int id)
         {

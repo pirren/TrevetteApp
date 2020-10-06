@@ -14,14 +14,13 @@ import axios from 'axios';
 
 class App extends Component {
   state = {
-    car: "",
-    salesObject : ""
+    car: []
   }
 
   componentDidMount() {
-    axios.get('https://localhost:44307/api/v1.0/Car/1')
-    .then(response => this.setState({car: response.data}));
-    console.log(this.state.car);
+    axios.get('https://localhost:44342/api/v1.0/Car/Forsale')
+    .then(response => console.log(response.data));
+    // .then(response => ));
   }
 
   render() {

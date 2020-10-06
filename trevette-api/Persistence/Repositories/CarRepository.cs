@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Serilog;
+using System.Linq;
 using System.Threading.Tasks;
 using trevette_api.Domain.Models;
 using trevette_api.Domain.Repositories;
@@ -17,6 +18,15 @@ namespace trevette_api.Persistence.Repositories
             Log.Information("Getting all cars");
             return await _context.Cars.Include(c => c.Photos)
                 .Include(c => c.SalesObject)
+                .ToArrayAsync();
+        }
+
+        public async Task<Car[]> ListForsaleAsync()
+        {
+            Log.Information("Getting all cars for sale");
+            return await _context.Cars.Include(c => c.Photos)
+                .Include(c => c.SalesObject)
+                .Where(c => c.SalesObject.InStock == true)
                 .ToArrayAsync();
         }
 

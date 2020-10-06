@@ -24,6 +24,11 @@ namespace trevette_api.Services
             return await _repository.ListAsync();
         }
 
+        public async Task<Car[]> ListForsaleAsync()
+        {
+            return await _repository.ListForsaleAsync();
+        }
+
         public async Task<Car> GetByIdAsync(int id)
         {
             return await _repository.FindByIdAsync(id);

@@ -7,6 +7,7 @@ namespace trevette_api.Domain.Services
     public interface ICarService
     {
         Task<Car[]> ListAsync();
+        Task<Car[]> ListForsaleAsync();
         Task<Car> GetByIdAsync(int id);
         Task<CarResponse> SaveAsync(Car car);
         Task<CarResponse> UpdateAsync(int id, Car resource);
