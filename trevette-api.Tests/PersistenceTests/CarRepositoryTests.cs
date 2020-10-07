@@ -35,7 +35,33 @@ namespace trevette_api.PersistenceTests
             var result = await carRepository.ListAsync();
             var expected = 1;
 
-            Assert.Equal(expected, mockCars.Where(c => c.SalesObject != null).Count());
+            Assert.Equal(expected, result.Where(c => c.SalesObject != null).Count());
+        }
+
+        [Fact]
+        public async void FindByIdAsync_GetSpecificCarById_ReturnsExpectedCarEntity()
+        {
+            var mockContext = new Mock<DataContext>();
+            var mockCars = GetMockCars();
+            mockContext.Setup(x => x.Cars).ReturnsDbSet(mockCars);
+            var carRepository = new CarRepository(mockContext.Object);
+
+            var result = await carRepository.FindByIdAsync(2);
+            var expectedCar = new Car
+            {
+                CarId = 2,
+                Model = "Volvo 240",
+                Year = 1980,
+                Mileage = 40000
+            };
+            var expected = (
+                expectedCar.CarId == result.CarId
+                && expectedCar.Model == result.Model
+                && expectedCar.Year == result.Year
+                && expectedCar.Mileage == result.Mileage
+                );
+
+            Assert.True(expected);
         }
 
         private static List<Car> GetMockCars()
