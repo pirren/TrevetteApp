@@ -1,6 +1,7 @@
 using Moq;
 using Moq.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using trevette_api.Domain.Models;
 using trevette_api.Persistence.Contexts;
 using trevette_api.Persistence.Repositories;
@@ -23,6 +24,20 @@ namespace trevette_api.PersistenceTests
             Assert.True(result.Length == mockCars.Count);
         }
 
+        [Fact]
+        public async void ListForsaleAsync_ListingAllCarsForSale_ReturnsExpectedCountOfCarsForsale()
+        {
+            var mockContext = new Mock<DataContext>();
+            var mockCars = GetMockCars();
+            mockContext.Setup(x => x.Cars).ReturnsDbSet(mockCars);
+            var carRepository = new CarRepository(mockContext.Object);
+
+            var result = await carRepository.ListAsync();
+            var expected = 1;
+
+            Assert.Equal(expected, mockCars.Where(c => c.SalesObject != null).Count());
+        }
+
         private static List<Car> GetMockCars()
         {
             return new List<Car>
@@ -32,7 +47,11 @@ namespace trevette_api.PersistenceTests
                     CarId = 1,
                     Model = "Porsche 911 Carrera",
                     Year = 1980,
-                    Mileage = 12000
+                    Mileage = 12000,
+                    SalesObject = new SalesObject
+                    {
+                        SalesObjectId = 1
+                    }
                 }, new Car
                 {
                     CarId = 2,
