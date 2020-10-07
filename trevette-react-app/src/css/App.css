@@ -169,7 +169,7 @@ h1, h2 {
 }
 
 .object__info--technical .title {
-  margin-top: .5rem;
+  margin-top: 1rem;
 }
 
 .object__info--technical .box {
@@ -202,7 +202,6 @@ h1, h2 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  border-bottom: 1px solid #a3a3a1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,6 +209,7 @@ h1, h2 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-bottom: .15rem;
+  border-bottom: 1px solid #a3a3a1;
 }
 
 @media screen and (min-width: 1200px) {
@@ -219,22 +219,16 @@ h1, h2 {
   }
 }
 
+.object__info--technical .box .module__noborder {
+  border-bottom: 0;
+}
+
 .object__info--technical .box .module .left .fa, .object__info--technical .box .module .left .fas {
   margin-right: .5rem;
 }
 
 .object__info--technical .box .module .right span {
   color: #232123;
-}
-
-.object__info--technical .box .module:last-of-type {
-  margin-right: 0;
-}
-
-@media screen and (min-width: 1200px) {
-  .object__info--technical .box .module:last-of-type {
-    margin-left: .5rem;
-  }
 }
 
 .object__gallery {

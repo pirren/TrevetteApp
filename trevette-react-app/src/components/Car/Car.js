@@ -13,16 +13,37 @@ export default class Car extends Component {
                 <div className="object__photo" style={mainphotourl}></div>
                 <div className="object__info">
                     <div className="object__info--basic">
-                        <h2>{car.model}</h2>
-                        <CarBadges />
+                        <h2>{car.salesObject.title}</h2>
+                        {/* <CarBadges /> */}
                         <h4 className="flavor-title">{car.title}</h4>
-                        <p>{car.description}</p>
+                        <p>{car.salesObject.description}</p>
                         <div className="sale">
                             <button type="button" className="btn btn-lg btn-block">Förfråga om pris</button>
                         </div>
                     </div>
-                    <CarGallery />
+                    <div className="object__gallery">
+                        <CarGallery photos={car.photos} carId={car.carId} />
+                    </div>
                     <div className="object__info--technical">
+                        <h4 className="title">Om bilen</h4>
+                        <div className="box">
+                            <div className="module module__noborder">
+                                <div className="left"><span className="fa fa-car"></span><span>Modell:</span></div>
+                                <div className="right">{car.model}</div>
+                            </div>
+                        </div>
+                        <div className="box">
+                            <div className="module module__noborder">
+                                <div className="left"><span className="fa fa-car"></span><span>Årsmodell:</span></div>
+                                <div className="right">{car.year}</div>
+                            </div>
+                        </div>
+                        <div className="box">
+                            <div className="module module__noborder">
+                                <div className="left"><span className="fa fa-car"></span><span>Miltal:</span></div>
+                                <div className="right">{car.mileage}</div>
+                            </div>
+                        </div>
                         <h4 className="title">Tekniska detaljer</h4>
                         <div className="box">
                             <div className="module">
