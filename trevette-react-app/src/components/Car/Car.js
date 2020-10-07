@@ -1,26 +1,19 @@
 import React, { Component } from 'react'
 import CarGallery from './CarGallery'
-import CarBadges from './CarBadges'
+import SalesInfo from './SalesInfo/SalesInfo'
 
 export default class Car extends Component {
     render() {
+        var car = this.props.car;
+        const isForSale = this.props.car.salesObject != null;
         var mainphotourl = {
             backgroundImage: "url(gfx/cars/1/1.jpg)"
         };
-        var car = this.props.car;
         return (
             <div className="object">
                 <div className="object__photo" style={mainphotourl}></div>
                 <div className="object__info">
-                    <div className="object__info--basic">
-                        <h2>{car.salesObject.title}</h2>
-                        {/* <CarBadges /> */}
-                        <h4 className="flavor-title">{car.title}</h4>
-                        <p>{car.salesObject.description}</p>
-                        <div className="sale">
-                            <button type="button" className="btn btn-lg btn-block">Förfråga om pris</button>
-                        </div>
-                    </div>
+                    <SalesInfo salesObject={car.salesObject} />
                     <div className="object__gallery">
                         <CarGallery photos={car.photos} carId={car.carId} />
                     </div>

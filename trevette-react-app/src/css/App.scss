@@ -104,14 +104,17 @@ h1,h2 { font-family: $title; }
     &__info {
         padding: 2rem;
 
-        &--basic {
+        &--salesinfo {
             margin-bottom: 2rem;
             .flavor-title { margin-top: .5rem; }
             button { 
+                padding: .75rem 0;
                 font-family: $title; 
                 box-shadow: 0 0.375em 0 $yellow; 
                 border: 0.125rem solid $yellow;
+                background-color: rgba($yellow, 0.2);
                 &:hover {
+                    background-color: rgba($yellow, 0.35);
                     box-shadow: 0 0.375em 0 $orange; 
                     border: 0.125rem solid $orange;
                 }
@@ -162,7 +165,7 @@ h1,h2 { font-family: $title; }
                     }
 
                     .left {
-                        .fa, .fas { margin-right: .5rem; }
+                        .fa, .fas { margin-right: .5rem; color: darken($orange, 25%); }
                     }
 
                     .right {
