@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
 using System.Threading.Tasks;
 using trevette_api.Domain.Models;
 using trevette_api.Domain.Services;
@@ -88,6 +90,19 @@ namespace trevette_api.Controllers
 
             var carResource = _mapper.Map<Car, CarResource>(result.Car);
             return Ok(carResource);
+        }
+
+        [HttpPost]
+        [Route("AddPhoto")]
+        public IActionResult Add(IFormFile photo)
+        {
+            if (photo == null || photo.Length == 0)
+                return BadRequest();
+
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Photos/Car/Foo", photo.FileName);
+            new FileStream(path, FileMode.Create);
+            
+            return Ok();
         }
     }
 }
