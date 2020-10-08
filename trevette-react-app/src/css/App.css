@@ -24,6 +24,10 @@ h1, h2 {
   background-color: #FFD647;
 }
 
+.padded {
+  padding: 2rem;
+}
+
 .trevette-logo {
   height: 35px;
   width: 138px;
@@ -83,7 +87,7 @@ h1, h2 {
           order: 0;
 }
 
-.wrap-garage {
+.wrap-side {
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
@@ -92,15 +96,15 @@ h1, h2 {
 }
 
 @media screen and (max-width: 992px) {
-  .wrap-garage {
+  .wrap-side {
     margin-left: 0;
   }
-  .wrap-garage h2 {
+  .wrap-side h2 {
     margin-top: 1rem;
   }
 }
 
-.wrap-garage .module {
+.wrap-side .module {
   height: 120px;
   width: 100%;
   background-repeat: no-repeat;
@@ -111,7 +115,7 @@ h1, h2 {
   margin: 1rem 0;
 }
 
-.object-wrap {
+.component-wrap {
   background-color: #fff;
   border-radius: 5px;
   -webkit-box-shadow: 0px 2px 5px rgba(85, 84, 81, 0.25);
@@ -119,157 +123,7 @@ h1, h2 {
   overflow: hidden;
 }
 
-.object {
-  border-radius: 5px;
-}
-
-.object__photo {
-  height: 300px;
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.object__info {
+.page {
   padding: 2rem;
-}
-
-.object__info--salesinfo {
-  margin-bottom: 2rem;
-}
-
-.object__info--salesinfo .flavor-title {
-  margin-top: .5rem;
-}
-
-.object__info--salesinfo button {
-  padding: .75rem 0;
-  font-family: "Oswald", sans-serif;
-  -webkit-box-shadow: 0 0.375em 0 #FFD647;
-          box-shadow: 0 0.375em 0 #FFD647;
-  border: 0.125rem solid #FFD647;
-  background-color: rgba(255, 214, 71, 0.2);
-}
-
-.object__info--salesinfo button:hover {
-  background-color: rgba(255, 214, 71, 0.35);
-  -webkit-box-shadow: 0 0.375em 0 #faa230;
-          box-shadow: 0 0.375em 0 #faa230;
-  border: 0.125rem solid #faa230;
-}
-
-.object__info--salesinfo .badge {
-  font-size: 90%;
-  margin-right: .5rem;
-  padding: .35rem .6rem;
-}
-
-.object__info--salesinfo .price {
-  color: #555451;
-  text-align: center;
-  margin-top: .5rem;
-}
-
-.object__info--technical .title {
-  margin-top: 1rem;
-}
-
-.object__info--technical .box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-@media screen and (min-width: 1200px) {
-  .object__info--technical .box {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .object__info--technical .box:not(:last-of-type) {
-    margin-bottom: .5rem;
-  }
-}
-
-.object__info--technical .box .module {
-  margin-bottom: .5rem;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: .15rem;
-  border-bottom: 1px solid #a3a3a1;
-}
-
-@media screen and (min-width: 1200px) {
-  .object__info--technical .box .module {
-    margin-right: .5rem;
-    margin-bottom: 0;
-  }
-}
-
-.object__info--technical .box .module__noborder {
-  border-bottom: 0;
-}
-
-.object__info--technical .box .module .left .fa, .object__info--technical .box .module .left .fas {
-  margin-right: .5rem;
-  color: #a66004;
-}
-
-.object__info--technical .box .module .right span {
-  color: #232123;
-}
-
-.object__gallery {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: row;
-      -ms-flex: row wrap;
-          flex: row wrap;
-  margin: 1rem 0rem;
-}
-
-@media screen and (min-width: 768px) {
-  .object__gallery {
-    padding: 1rem 4rem;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .object__gallery {
-    padding: 1rem 0rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .object__gallery {
-    padding: 1rem 6rem;
-  }
-}
-
-.object__gallery .gallery-img {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  height: 100px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 /*# sourceMappingURL=App.css.map */

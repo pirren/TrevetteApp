@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import Cars from './components/Car/Cars';
 import Garage from './components/Garage';
+
+import About from './components/Pages/About';
+import Dashboard from './components/Pages/Dashboard/Dashboard';
+import DashboardMenu from './components/Pages/Dashboard/DashboardMenu';
 
 import "jquery/dist/jquery.min.js";
 
@@ -28,25 +35,31 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <Router>
         <Navbar />
 
         <div className="container main-container">
 
+          {/* Main content */}
           <div className="wrap-main">
-            <div className="object-wrap">
-              <Cars cars={this.state.cars} />
+            <div className="component-wrap">
+            <Route exact path="/" render={props => (
+              <React.Fragment>
+                <Cars cars={this.state.cars} />
+              </React.Fragment>
+            )} />
+            <Route path="/About" component={About} />
+            <Route path="/Dashboard" component={Dashboard} />
             </div>
           </div>
-
-          <div className="wrap-garage">
-            <h2>Tidigare i Garaget</h2>
-            <Garage />
+          {/* Left-hand side */}
+          <div className="wrap-side">
+              <Route exact path="/" component={Garage} />
+              <Route path="/Dashboard" component={DashboardMenu} />
           </div>
 
         </div>
-
-      </div>
+      </Router>
     );
   }
 }

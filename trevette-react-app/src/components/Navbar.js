@@ -5,7 +5,7 @@ export default class Navbar extends Component {
         return (
             <div className="navbar-container">
                 <nav className="navbar navbar-expand-lg justift-content-between navbar-light">
-                    <a className="navbar-brand" href="#">
+                    <a className="navbar-brand" href="/">
                         <div className="trevette-logo"></div>
                     </a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,13 +15,13 @@ export default class Navbar extends Component {
                     <div className="collapse navbar-collapse" id="navbarMenu">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Garaget</a>
+                                <a className="nav-link" href="/">Garaget</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Om Trevette</a>
+                                <a className="nav-link" href="/About">Om Trevette</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Kontakta</a>
+                                <a className="nav-link" href="/Contact">Kontakta</a>
                             </li>
                         </ul>
                     </div>

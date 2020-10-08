@@ -19,6 +19,7 @@ body {
 
 h1,h2 { font-family: $title; }
 .bg-yellow { background-color: $yellow; }
+.padded { padding: 2rem; }
 
 // navbar
 .trevette-logo { 
@@ -62,7 +63,7 @@ h1,h2 { font-family: $title; }
     order: 0;
 }
 
-.wrap-garage {
+.wrap-side {
     flex: 3;
     margin-left: 1rem;
     border-radius: 5px;
@@ -82,121 +83,15 @@ h1,h2 { font-family: $title; }
     }
 }
 
-// object container 
-.object-wrap {
+// component container 
+.component-wrap {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(#555451, 0.25);
     overflow: hidden;
 }
 
-.object {
-    border-radius: 5px;
-
-    &__photo {
-        height: 300px;
-        width: 100%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    &__info {
-        padding: 2rem;
-
-        &--salesinfo {
-            margin-bottom: 2rem;
-            .flavor-title { margin-top: .5rem; }
-            button { 
-                padding: .75rem 0;
-                font-family: $title; 
-                box-shadow: 0 0.375em 0 $yellow; 
-                border: 0.125rem solid $yellow;
-                background-color: rgba($yellow, 0.2);
-                &:hover {
-                    background-color: rgba($yellow, 0.35);
-                    box-shadow: 0 0.375em 0 $orange; 
-                    border: 0.125rem solid $orange;
-                }
-            }
-            .badge { 
-                font-size: 90%; 
-                margin-right: .5rem; 
-                padding: .35rem .6rem;
-            }
-            .price { 
-                color: #555451; 
-                text-align: center; 
-                margin-top: .5rem; 
-            }
-        }
-
-        &--technical {
-            .title { margin-top: 1rem; }
-
-            .box {
-                display: flex;
-                flex-direction: column;
-                
-                @media screen and (min-width: 1200px) {
-                    flex-direction: row;
-                }
-                
-                &:not(:last-of-type) { 
-                    @media screen and (min-width: 1200px) {
-                        margin-bottom: .5rem; 
-                    }
-                }
-
-                .module {
-                    margin-bottom: .5rem; 
-                    @media screen and (min-width: 1200px) {
-                        margin-right: .5rem;
-                        margin-bottom: 0; 
-                    }
-                    flex: 1;
-                    display: flex;
-                    justify-content: space-between;
-                    padding-bottom: .15rem;
-                    border-bottom: 1px solid #a3a3a1;
-
-                    &__noborder {
-                        border-bottom: 0;
-                    }
-
-                    .left {
-                        .fa, .fas { margin-right: .5rem; color: darken($orange, 25%); }
-                    }
-
-                    .right {
-                        span { color: #232123; }
-                    }
-
-                    // &--push-left {
-                    //     margin-right: 0;
-                    //     @media screen and (min-width: 1200px) {
-                    //         margin-left: .5rem;
-                    //     }
-                    // }
-                }
-            }
-        }
-    }
-
-    &__gallery {
-        display: flex;
-        flex: row wrap;
-        margin: 1rem 0rem;
-        @media screen and(min-width: 768px) { padding: 1rem 4rem; }
-        @media screen and(min-width: 992px) { padding: 1rem 0rem; }
-        @media screen and(min-width: 1200px) { padding: 1rem 6rem; }
-
-        .gallery-img {
-            flex: 1;
-            height: 100px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    }
+.page {
+    padding: 2rem;
 }
+
