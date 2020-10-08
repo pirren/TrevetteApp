@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -26,7 +27,7 @@ class CarLink extends Component {
     render() {
         return (
         <React.Fragment>
-            <a href={"/Dashboard/Cars/"+this.props.car.carId}>{this.props.car.model}</a><br />
+            <span className="fa fa-caret-right"></span> <Link to={"/Dashboard/Cars/"+this.props.car.carId}>{this.props.car.model}</Link><br />
         </React.Fragment>
         )
     }
