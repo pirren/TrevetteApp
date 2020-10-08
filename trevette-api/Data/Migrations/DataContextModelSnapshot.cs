@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using trevette_api.Persistence.Contexts;
 
-namespace trevette_api.Data.Migrations
+namespace trevetteapi.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
@@ -25,6 +25,9 @@ namespace trevette_api.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Manufacturer")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Mileage")
                         .HasColumnType("int");
@@ -48,14 +51,16 @@ namespace trevette_api.Data.Migrations
                         new
                         {
                             CarId = 1,
-                            Mileage = 12000,
-                            Model = "Porsche 911 Carrera",
+                            Manufacturer = "Chevrolet",
+                            Mileage = 9000,
+                            Model = "Chevrolet Corvette Stingray",
                             SalesObjectId = 1,
-                            Year = 1980
+                            Year = 1976
                         },
                         new
                         {
                             CarId = 2,
+                            Manufacturer = "Volvo",
                             Mileage = 40000,
                             Model = "Volvo 240",
                             SalesObjectId = 2,
@@ -64,6 +69,7 @@ namespace trevette_api.Data.Migrations
                         new
                         {
                             CarId = 3,
+                            Manufacturer = "Saab",
                             Mileage = 3000,
                             Model = "Saab 9-3",
                             Year = 2012
@@ -71,6 +77,7 @@ namespace trevette_api.Data.Migrations
                         new
                         {
                             CarId = 4,
+                            Manufacturer = "Ferrari",
                             Mileage = 15000,
                             Model = "Ferrari 250 Testa Rossa",
                             Year = 1960
@@ -167,7 +174,7 @@ namespace trevette_api.Data.Migrations
                             SalesObjectId = 1,
                             Description = "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.",
                             InStock = true,
-                            StartDate = new DateTime(2020, 10, 5, 22, 33, 52, 368, DateTimeKind.Local).AddTicks(618),
+                            StartDate = new DateTime(2020, 10, 9, 0, 31, 18, 74, DateTimeKind.Local).AddTicks(6140),
                             Title = "Tidlös maskin"
                         },
                         new
@@ -175,7 +182,7 @@ namespace trevette_api.Data.Migrations
                             SalesObjectId = 2,
                             Description = "Denna gamla Volvo är en klassisk bakhjulsdriven personbil och går aldrig fel. Rullar fint.",
                             InStock = false,
-                            StartDate = new DateTime(2020, 10, 5, 22, 33, 52, 370, DateTimeKind.Local).AddTicks(7862),
+                            StartDate = new DateTime(2020, 10, 9, 0, 31, 18, 77, DateTimeKind.Local).AddTicks(6430),
                             Title = "Odödlig"
                         });
                 });

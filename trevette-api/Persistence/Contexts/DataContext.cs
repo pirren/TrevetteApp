@@ -40,13 +40,15 @@ namespace trevette_api.Persistence.Contexts
             modelBuilder.Entity<Car>().HasData(new
             {
                 CarId = 1,
-                Model = "Porsche 911 Carrera",
-                Year = 1980,
-                Mileage = 12000,
+                Manufacturer = "Chevrolet",
+                Model = "Chevrolet Corvette Stingray",
+                Year = 1976,
+                Mileage = 9000,
                 SalesObjectId = 1
             }, new
             {
                 CarId = 2,
+                Manufacturer = "Volvo",
                 Model = "Volvo 240",
                 Year = 1980,
                 Mileage = 40000,
@@ -54,12 +56,14 @@ namespace trevette_api.Persistence.Contexts
             }, new
             {
                 CarId = 3,
+                Manufacturer = "Saab",
                 Model = "Saab 9-3",
                 Year = 2012,
                 Mileage = 3000
             }, new
             {
                 CarId = 4,
+                Manufacturer = "Ferrari",
                 Model = "Ferrari 250 Testa Rossa",
                 Year = 1960,
                 Mileage = 15000

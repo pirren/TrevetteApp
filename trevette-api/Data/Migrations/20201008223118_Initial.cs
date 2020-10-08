@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace trevette_api.Data.Migrations
+namespace trevetteapi.Data.Migrations
 {
-    public partial class DataStructureChanges : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,6 +30,7 @@ namespace trevette_api.Data.Migrations
                 {
                     CarId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Manufacturer = table.Column<string>(nullable: true),
                     Model = table.Column<string>(nullable: true),
                     Year = table.Column<int>(nullable: false),
                     Mileage = table.Column<int>(nullable: false),
@@ -68,11 +69,11 @@ namespace trevette_api.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Car",
-                columns: new[] { "CarId", "Mileage", "Model", "SalesObjectId", "Year" },
+                columns: new[] { "CarId", "Manufacturer", "Mileage", "Model", "SalesObjectId", "Year" },
                 values: new object[,]
                 {
-                    { 3, 3000, "Saab 9-3", null, 2012 },
-                    { 4, 15000, "Ferrari 250 Testa Rossa", null, 1960 }
+                    { 3, "Saab", 3000, "Saab 9-3", null, 2012 },
+                    { 4, "Ferrari", 15000, "Ferrari 250 Testa Rossa", null, 1960 }
                 });
 
             migrationBuilder.InsertData(
@@ -80,17 +81,17 @@ namespace trevette_api.Data.Migrations
                 columns: new[] { "SalesObjectId", "Description", "InStock", "Price", "StartDate", "Title" },
                 values: new object[,]
                 {
-                    { 1, "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.", true, null, new DateTime(2020, 10, 5, 22, 33, 52, 368, DateTimeKind.Local).AddTicks(618), "Tidlös maskin" },
-                    { 2, "Denna gamla Volvo är en klassisk bakhjulsdriven personbil och går aldrig fel. Rullar fint.", false, null, new DateTime(2020, 10, 5, 22, 33, 52, 370, DateTimeKind.Local).AddTicks(7862), "Odödlig" }
+                    { 1, "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.", true, null, new DateTime(2020, 10, 9, 0, 31, 18, 74, DateTimeKind.Local).AddTicks(6140), "Tidlös maskin" },
+                    { 2, "Denna gamla Volvo är en klassisk bakhjulsdriven personbil och går aldrig fel. Rullar fint.", false, null, new DateTime(2020, 10, 9, 0, 31, 18, 77, DateTimeKind.Local).AddTicks(6430), "Odödlig" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Car",
-                columns: new[] { "CarId", "Mileage", "Model", "SalesObjectId", "Year" },
+                columns: new[] { "CarId", "Manufacturer", "Mileage", "Model", "SalesObjectId", "Year" },
                 values: new object[,]
                 {
-                    { 1, 12000, "Porsche 911 Carrera", 1, 1980 },
-                    { 2, 40000, "Volvo 240", 2, 1980 }
+                    { 1, "Chevrolet", 9000, "Chevrolet Corvette Stingray", 1, 1976 },
+                    { 2, "Volvo", 40000, "Volvo 240", 2, 1980 }
                 });
 
             migrationBuilder.InsertData(

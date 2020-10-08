@@ -57,9 +57,11 @@ namespace trevette_api.Services
             if (existingCar == null)
                 return new CarResponse("Car not found");
 
+            existingCar.Manufacturer = car.Manufacturer;
             existingCar.Model = car.Model;
             existingCar.Year = car.Year;
             existingCar.Mileage = car.Mileage;
+            existingCar.SalesObject = car.SalesObject;
             existingCar.Photos = car.Photos;
 
             try

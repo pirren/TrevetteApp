@@ -5,6 +5,8 @@ namespace trevette_api.Resources
     public class SaveCarResource
     {
         [Required]
+        public string Manufacturer { get; set; }
+        [Required]
         public string Model { get; set; }
         [Required]
         public int Year { get; set; }
