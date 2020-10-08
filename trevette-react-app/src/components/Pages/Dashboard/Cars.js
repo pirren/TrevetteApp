@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import Car from './Car'
 import axios from 'axios';
 
 export default class Cars extends Component {
@@ -18,9 +17,17 @@ export default class Cars extends Component {
     }
     render() {
         return this.state.cars.map((car) => (
-            <React.Fragment>
-                <Car car={car} />
-            </React.Fragment>
+            <CarLink key={car.carId} car={car} />
         ));
+    }
+}
+
+class CarLink extends Component {
+    render() {
+        return (
+        <React.Fragment>
+            <a href={"/Dashboard/Cars/"+this.props.car.carId}>{this.props.car.model}</a><br />
+        </React.Fragment>
+        )
     }
 }

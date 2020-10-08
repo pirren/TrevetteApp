@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 
 export default class Navbar extends Component {
     render() {
         return (
             <div className="navbar-container">
                 <nav className="navbar navbar-expand-lg justift-content-between navbar-light">
-                    <a className="navbar-brand" href="/">
+                    <Link className="navbar-brand" to="/">
                         <div className="trevette-logo"></div>
-                    </a>
+                    </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -15,13 +17,13 @@ export default class Navbar extends Component {
                     <div className="collapse navbar-collapse" id="navbarMenu">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Garaget</a>
+                                <Link className="nav-link" to="/">Garaget</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/About">Om Trevette</a>
+                                <Link className="nav-link" to="/About">Om Trevette</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/Contact">Kontakta</a>
+                                <Link className="nav-link" to="/Contact">Kontakta</Link>
                             </li>
                         </ul>
                     </div>

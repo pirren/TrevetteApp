@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Cars from './Cars'
-import DashboardMenuLinks from './DashboardMenuLinks'
+import CarDetails from './CarDetails'
 
 import './dashboard.css'
 
@@ -14,19 +14,37 @@ export default class Dashboard extends Component {
             <h1>Adminpanelen</h1>
             <p>Välkommen till din adminpanel.</p> 
             <Router>
+              {/* Landing page */}
               <Route exact path="/Dashboard" render={props => (
                 <DashboardMenuLinks />
               )} />
-              <Route path="/Dashboard/Cars" render={props => (
+              {/* All cars */}
+              <Route exact path="/Dashboard/Cars" render={props => (
                 <React.Fragment>
                   <div className="dashboard__breadcrumbs">
-                    <a href="/Dashboard">Adminpanel</a> &gt; <a href="/Dashboard/Cars">Bilar</a>
+                      <Link to="/Dashboard">Adminpanel</Link> &gt; <Link to="/Dashboard/Cars">Bilar</Link>
                   </div>
                   <Cars />
+                </React.Fragment>
+              )} />
+              {/* Car by id */}
+              <Route exact path="/Dashboard/Cars/:id" render={props => (
+                <React.Fragment>
+                  <CarDetails {...props } />
                 </React.Fragment>
               )} />
             </Router>
         </div>
         )
     }
+}
+
+function DashboardMenuLinks() {
+  return (
+      <React.Fragment>
+          <Link to="/Dashboard/Cars">Bilar</Link><br />
+          <Link to="/Dashboard/SalesObject">Annonser</Link><br />
+          <Link to="/Dashboard/Photos">Foton</Link><br />
+      </React.Fragment>
+  )
 }
