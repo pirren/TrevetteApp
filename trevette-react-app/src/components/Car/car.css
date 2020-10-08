@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap");
 .object {
   border-radius: 5px;
@@ -27,16 +27,16 @@
 .object__info--salesinfo button {
   padding: .75rem 0;
   font-family: "Oswald", sans-serif;
-  -webkit-box-shadow: 0 0.375em 0 #FFD647;
-          box-shadow: 0 0.375em 0 #FFD647;
+  -webkit-box-shadow: 0 0.275em 0 #FFD647;
+          box-shadow: 0 0.275em 0 #FFD647;
   border: 0.125rem solid #FFD647;
   background-color: rgba(255, 214, 71, 0.2);
 }
 
 .object__info--salesinfo button:hover {
   background-color: rgba(255, 214, 71, 0.35);
-  -webkit-box-shadow: 0 0.375em 0 #faa230;
-          box-shadow: 0 0.375em 0 #faa230;
+  -webkit-box-shadow: 0 0.385em 0 #faa230;
+          box-shadow: 0 0.385em 0 #faa230;
   border: 0.125rem solid #faa230;
 }
 
@@ -109,7 +109,7 @@
 
 .object__info--technical .box .item .left .fa, .object__info--technical .box .item .left .fas {
   margin-right: .5rem;
-  color: #a66004;
+  color: #faa230;
 }
 
 .object__info--technical .box .item .right span {

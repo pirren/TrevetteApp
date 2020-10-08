@@ -13,6 +13,16 @@ $orange: #faa230;
     &__main {
 
     }
+
+    &__module {
+        width: 100%;
+        background: lighten($orange, 75%);
+    }
+
+    &__breadcrumbs {
+        font-size: 90%;
+        margin-bottom: 1rem;
+    }
 }
 
 // för att dölja sidan

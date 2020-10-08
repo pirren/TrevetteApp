@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap');
 
-$sans: 'Lato', sans-serif;
+$sans: 'Montserrat', sans-serif;
 $title: 'Oswald', sans-serif;
 
 $yellow: #FFD647;
@@ -15,7 +15,7 @@ body {
     }
 }
 
-* { transition: .125s ease-in; }
+* { transition: all .125s ease-in; }
 
 h1,h2 { font-family: $title; }
 .bg-yellow { background-color: $yellow; }
@@ -68,7 +68,7 @@ h1,h2 { font-family: $title; }
     margin-left: 1rem;
     border-radius: 5px;
     @media screen and (max-width: 992px) { 
-        h2 { margin-top: 1rem; }
+        margin-top: 1rem; 
         margin-left: 0; 
     }
 

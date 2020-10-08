@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap');
 
-$sans: 'Lato', sans-serif;
+$sans: 'Montserrat', sans-serif;
 $title: 'Oswald', sans-serif;
 
 $yellow: #FFD647;
 $orange: #faa230;
+
 
 .object {
     border-radius: 5px;
@@ -27,12 +28,13 @@ $orange: #faa230;
             button { 
                 padding: .75rem 0;
                 font-family: $title; 
-                box-shadow: 0 0.375em 0 $yellow; 
+                box-shadow: 0 0.275em 0 $yellow; 
                 border: 0.125rem solid $yellow;
                 background-color: rgba($yellow, 0.2);
                 &:hover {
+                    
                     background-color: rgba($yellow, 0.35);
-                    box-shadow: 0 0.375em 0 $orange; 
+                    box-shadow: 0 0.385em 0 $orange; 
                     border: 0.125rem solid $orange;
                 }
             }
@@ -82,7 +84,7 @@ $orange: #faa230;
                     }
 
                     .left {
-                        .fa, .fas { margin-right: .5rem; color: darken($orange, 25%); }
+                        .fa, .fas { margin-right: .5rem; color: $orange; }
                     }
 
                     .right {

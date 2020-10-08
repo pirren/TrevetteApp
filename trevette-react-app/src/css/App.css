@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap");
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #F8F6F5;
 }
 
@@ -12,8 +12,8 @@ body {
 }
 
 * {
-  -webkit-transition: .125s ease-in;
-  transition: .125s ease-in;
+  -webkit-transition: all .125s ease-in;
+  transition: all .125s ease-in;
 }
 
 h1, h2 {
@@ -97,10 +97,8 @@ h1, h2 {
 
 @media screen and (max-width: 992px) {
   .wrap-side {
-    margin-left: 0;
-  }
-  .wrap-side h2 {
     margin-top: 1rem;
+    margin-left: 0;
   }
 }
 

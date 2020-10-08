@@ -1,29 +1,31 @@
 import React, { Component } from 'react'
 
-import Cars from './Cars'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import axios from 'axios';
+import Cars from './Cars'
+import DashboardMenuLinks from './DashboardMenuLinks'
+
 import './dashboard.css'
 
 export default class Dashboard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          cars: []
-        }
-      }
-    
-      componentDidMount() {
-        axios.get('https://localhost:44342/api/v1.0/Car/')
-        .then(res => { this.setState({cars: res.data}) } )
-        .catch(err => {console.log(err)}); 
-      }
     render() {
         return (
         <div className="page dashboard__main">
             <h1>Adminpanelen</h1>
-            <p>Välkommen till din adminpanel. Alla bilar:</p>
-            <Cars cars={this.state.cars} />
+            <p>Välkommen till din adminpanel.</p> 
+            <Router>
+              <Route exact path="/Dashboard" render={props => (
+                <DashboardMenuLinks />
+              )} />
+              <Route path="/Dashboard/Cars" render={props => (
+                <React.Fragment>
+                  <div className="dashboard__breadcrumbs">
+                    <a href="/Dashboard">Adminpanel</a> &gt; <a href="/Dashboard/Cars">Bilar</a>
+                  </div>
+                  <Cars />
+                </React.Fragment>
+              )} />
+            </Router>
         </div>
         )
     }

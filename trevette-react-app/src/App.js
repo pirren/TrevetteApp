@@ -8,7 +8,7 @@ import Garage from './components/Garage';
 
 import About from './components/Pages/About';
 import Dashboard from './components/Pages/Dashboard/Dashboard';
-import DashboardMenu from './components/Pages/Dashboard/DashboardMenu';
+import DashboardMenu from './components/Pages/Dashboard/DashboardSide';
 
 import "jquery/dist/jquery.min.js";
 
