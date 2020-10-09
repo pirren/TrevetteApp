@@ -1,16 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 
 namespace trevette_api.Resources
 {
     public class SaveCarResource
     {
-        [Required]
+        public int CarId { get; set; }
         public string Manufacturer { get; set; }
-        [Required]
         public string Model { get; set; }
-        [Required]
         public int Year { get; set; }
-        [Required]
         public int Mileage { get; set; }
     }
 }

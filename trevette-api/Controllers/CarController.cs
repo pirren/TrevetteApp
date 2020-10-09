@@ -49,7 +49,7 @@ namespace trevette_api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> PostAsync([FromBody] SaveCarResource resource)
+        public async Task<IActionResult> PostAsync([FromBody] SaveCarResource resource)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState.GetErrorMessages());

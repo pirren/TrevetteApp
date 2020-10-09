@@ -61,8 +61,6 @@ namespace trevette_api.Services
             existingCar.Model = car.Model;
             existingCar.Year = car.Year;
             existingCar.Mileage = car.Mileage;
-            existingCar.SalesObject = car.SalesObject;
-            existingCar.Photos = car.Photos;
 
             try
             {

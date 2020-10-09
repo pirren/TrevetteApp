@@ -174,7 +174,7 @@ namespace trevetteapi.Data.Migrations
                             SalesObjectId = 1,
                             Description = "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.",
                             InStock = true,
-                            StartDate = new DateTime(2020, 10, 9, 0, 31, 18, 74, DateTimeKind.Local).AddTicks(6140),
+                            StartDate = new DateTime(2020, 10, 9, 12, 55, 36, 113, DateTimeKind.Local).AddTicks(8650),
                             Title = "Tidlös maskin"
                         },
                         new
@@ -182,7 +182,7 @@ namespace trevetteapi.Data.Migrations
                             SalesObjectId = 2,
                             Description = "Denna gamla Volvo är en klassisk bakhjulsdriven personbil och går aldrig fel. Rullar fint.",
                             InStock = false,
-                            StartDate = new DateTime(2020, 10, 9, 0, 31, 18, 77, DateTimeKind.Local).AddTicks(6430),
+                            StartDate = new DateTime(2020, 10, 9, 12, 55, 36, 116, DateTimeKind.Local).AddTicks(1653),
                             Title = "Odödlig"
                         });
                 });

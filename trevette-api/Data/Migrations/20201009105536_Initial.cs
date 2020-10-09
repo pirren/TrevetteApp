@@ -81,8 +81,8 @@ namespace trevetteapi.Data.Migrations
                 columns: new[] { "SalesObjectId", "Description", "InStock", "Price", "StartDate", "Title" },
                 values: new object[,]
                 {
-                    { 1, "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.", true, null, new DateTime(2020, 10, 9, 0, 31, 18, 74, DateTimeKind.Local).AddTicks(6140), "Tidlös maskin" },
-                    { 2, "Denna gamla Volvo är en klassisk bakhjulsdriven personbil och går aldrig fel. Rullar fint.", false, null, new DateTime(2020, 10, 9, 0, 31, 18, 77, DateTimeKind.Local).AddTicks(6430), "Odödlig" }
+                    { 1, "Den nya porschen är riktigt fet. Har en 3 L motor och gör 100 km/h på 3.7 s med sport-chrono paket. Denna vagn är för dom riktigt rika.", true, null, new DateTime(2020, 10, 9, 12, 55, 36, 113, DateTimeKind.Local).AddTicks(8650), "Tidlös maskin" },
+                    { 2, "Denna gamla Volvo är en klassisk bakhjulsdriven personbil och går aldrig fel. Rullar fint.", false, null, new DateTime(2020, 10, 9, 12, 55, 36, 116, DateTimeKind.Local).AddTicks(1653), "Odödlig" }
                 });
 
             migrationBuilder.InsertData(
